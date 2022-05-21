@@ -1,12 +1,12 @@
 import React from 'react';
 
-function ButtonApi(){
+function ButtonApi({ cadaster }){
   return(
     <>
       <button
         type='submit'
       >
-          OK
+      { cadaster ? 'Submit' : 'Login'}
       </button>
     </>
   )

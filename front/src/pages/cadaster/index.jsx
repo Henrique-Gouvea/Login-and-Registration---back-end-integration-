@@ -5,8 +5,7 @@ function Cadaster() {
   return(
     <>
       <div>
-        <h1>Cadaster</h1>
-        <h2>Hi, welcome ...</h2>
+        <h1>Create Account</h1>
       </div>
       <div>
         <Form cadaster = 'cadaster'/>

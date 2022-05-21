@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import ButtonApi from "../buttonapi";
 import CadasterContext from "../../../context/CadasterContext";
+import { useNavigate } from 'react-router-dom';
 
 function Form({ cadaster }){
   const {
@@ -11,6 +12,8 @@ function Form({ cadaster }){
     passwordConfirm,
     setPasswordConfirm,
 } = useContext(CadasterContext);
+
+const navigate = useNavigate();
 
   return(
     <form>
@@ -38,19 +41,32 @@ function Form({ cadaster }){
       </label>
       {cadaster
         ? (
-        <label htmlFor="password-confirm">
-        Confirm Password
-        <input
-          type="password"
-          name="password-confirm"
-          onChange={ (ele) => setPasswordConfirm(
-            ele.target.value,
-          ) }
-          value={ passwordConfirm }
-        />
-        </label>)
+        <>
+          <label htmlFor="password-confirm">
+          Confirm Password
+          <input
+            type="password"
+            name="password-confirm"
+            onChange={ (ele) => setPasswordConfirm(
+              ele.target.value,
+            ) }
+            value={ passwordConfirm }
+          />
+          </label>
+        </>
+        )
         :  ''}
-      <ButtonApi />
+      <>  
+        <ButtonApi cadaster= { cadaster }/>
+        {cadaster
+          ?(
+          <button
+            type="submit"
+            onClick={ () => navigate('/login') }
+          >Back Login</button>)
+          : ''
+        }
+      </>
     </form>
   )
 }
