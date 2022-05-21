@@ -11,9 +11,18 @@ function Form({ cadaster }){
     setPasswordLogin,
     passwordConfirm,
     setPasswordConfirm,
-} = useContext(CadasterContext);
+    setBtnDisabled,
+  } = useContext(CadasterContext);
 
-const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  const clickBackButton  = () => {
+    navigate('/login');
+    setNameLogin('');
+    setPasswordLogin('');
+    setBtnDisabled(true);
+    setPasswordConfirm('');
+  }
 
   return(
     <form>
@@ -62,7 +71,7 @@ const navigate = useNavigate();
           ?(
           <button
             type="submit"
-            onClick={ () => navigate('/login') }
+            onClick={ clickBackButton }
           >Back Login</button>)
           : ''
         }

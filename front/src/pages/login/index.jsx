@@ -4,18 +4,20 @@ import { useNavigate } from 'react-router-dom';
 import Form from "../components/form.jsx";
 
 function Login() {
-	const {
-			setNameLogin,
-			setPasswordLogin,
+  const {
+	setNameLogin,
+	setPasswordLogin,
+	setBtnDisabled,
   } = useContext(CadasterContext);
 	
-	const navigate = useNavigate()
+  const navigate = useNavigate()
 
-	const buttonCadasterClick = () => {
-		setPasswordLogin('')
-		setNameLogin('')
-		navigate('/user/cadaster')
-	}
+  const buttonCadasterClick = () => {
+	setPasswordLogin('')
+	setNameLogin('')
+	setBtnDisabled(true)
+	navigate('/user/cadaster')
+  }
 	
 	return(
 		<>
