@@ -3,7 +3,15 @@ import React from "react";
 function Cadaster() {
   return(
     <>
-      <h1>Cadaster</h1>
+      <div>
+        <h1>Cadaster</h1>
+        <h2>Hi, welcome ...</h2>
+      </div>
+      <div>
+        <form>
+          
+        </form>
+      </div>
     </>
   )
 }
