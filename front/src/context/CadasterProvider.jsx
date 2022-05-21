@@ -4,6 +4,7 @@ import CadasterContext from './CadasterContext';
 function CadasterProvider({ children }) {
   const [ nameLogin, setNameLogin ] = useState('');
   const [ passwordLogin, setPasswordLogin ] = useState('');
+  const [ passwordConfirm, setPasswordConfirm ] = useState('');
 
   useEffect(() => {
     
@@ -14,6 +15,8 @@ function CadasterProvider({ children }) {
     setNameLogin,
     passwordLogin,
     setPasswordLogin,
+    passwordConfirm,
+    setPasswordConfirm,
   };
 
   return (

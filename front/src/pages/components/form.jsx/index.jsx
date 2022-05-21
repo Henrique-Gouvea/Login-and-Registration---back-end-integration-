@@ -2,12 +2,14 @@ import React, { useContext } from "react";
 import ButtonApi from "../buttonapi";
 import CadasterContext from "../../../context/CadasterContext";
 
-function Form(){
+function Form({ cadaster }){
   const {
     nameLogin,
     setNameLogin,
     passwordLogin,
     setPasswordLogin,
+    passwordConfirm,
+    setPasswordConfirm,
 } = useContext(CadasterContext);
 
   return(
@@ -34,6 +36,20 @@ function Form(){
           value={ passwordLogin }
         />
       </label>
+      {cadaster
+        ? (
+        <label htmlFor="password-confirm">
+        Confirm Password
+        <input
+          type="password"
+          name="password-confirm"
+          onChange={ (ele) => setPasswordConfirm(
+            ele.target.value,
+          ) }
+          value={ passwordConfirm }
+        />
+        </label>)
+        :  ''}
       <ButtonApi />
     </form>
   )

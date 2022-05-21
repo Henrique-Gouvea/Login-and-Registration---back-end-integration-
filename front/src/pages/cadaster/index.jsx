@@ -1,4 +1,5 @@
 import React from "react";
+import Form from "../components/form.jsx";
 
 function Cadaster() {
   return(
@@ -8,9 +9,7 @@ function Cadaster() {
         <h2>Hi, welcome ...</h2>
       </div>
       <div>
-        <form>
-          
-        </form>
+        <Form cadaster = 'cadaster'/>
       </div>
     </>
   )
