@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Cadaster from '../cadaster';
 import Login from '../login';
+import NotFound from '../notfound';
 
 function RoutesApp(){
   return(
@@ -9,7 +10,7 @@ function RoutesApp(){
       <Route exact path="/" element={ <Login/> } />
       <Route exact path="/login" element={ <Login/> } />
 			<Route exact path="/user/cadaster" element={ <Cadaster/> } />
-			{/* <Route path="" element={ <NotFound/> } /> */}
+			<Route path="" element={ <NotFound/> } />
     </Routes>
   )
 }
