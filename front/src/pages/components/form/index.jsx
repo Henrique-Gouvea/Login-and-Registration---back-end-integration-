@@ -39,7 +39,9 @@ function Form({ cadaster }) {
           />
           {cadaster
             ? (
-              <p>
+              <p
+              className={ nameLogin.length > 2 ? 'verifyOk' : '' }
+              >
                 {nameLogin.length > 2
                   ? 'Accept'
                   : 'Name length min 2'}
@@ -50,15 +52,17 @@ function Form({ cadaster }) {
             onChange={(ele) => setPasswordLogin(
               ele.target.value,
             )}
-            value={passwordLogin}
+            value={ passwordLogin }
             placeholder="Password"
           />
           {cadaster
             ? (
-              <p>
-                {passwordLogin.length > 5
+              <p
+                className= { passwordLogin.length > 5 ? 'verifyOk' : '' }
+              >
+                { passwordLogin.length > 5
                   ? 'Accept'
-                  : 'Password length min 6'}
+                  : 'Password length min 6' }
               </p>) : ''}
 
           {cadaster
@@ -74,8 +78,9 @@ function Form({ cadaster }) {
                   placeholder="Confirm Password"
                   value={passwordConfirm}
                 />
-
-                <p>
+                <p
+                  className= { passwordConfirm && (passwordConfirm === passwordLogin) ? 'verifyOk' : '' }
+                >
                   {passwordConfirm && (passwordConfirm === passwordLogin)
                     ? 'Accept'
                     : 'Confirm equal password'}

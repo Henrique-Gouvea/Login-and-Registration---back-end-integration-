@@ -46,5 +46,8 @@ export const InputContainer = styled.div`
     font-size: 1rem;
   }
   }
+  .verifyOk{
+    color: green;
+  }
 `;
 
