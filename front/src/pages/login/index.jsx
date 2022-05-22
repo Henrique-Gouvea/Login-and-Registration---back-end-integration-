@@ -22,6 +22,7 @@ function Login() {
 
 	return (
 		<S.LoginContainer>
+		  <S.LoginSubContainer>
 			<h1>Login</h1>
 			<div>
 				<Form />
@@ -35,6 +36,7 @@ function Login() {
 					</button>
 				</div>
 			</div>
+			</S.LoginSubContainer>
 		</S.LoginContainer>
 	)
 }

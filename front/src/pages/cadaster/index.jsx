@@ -7,21 +7,23 @@ function Cadaster() {
 
   const navigate = useNavigate();
 
-  return(
+  return (
     <S.CadasterContainer>
-      <div>
-        <h1>Create Account</h1>
-      </div>
-      <div>
-        <Form cadaster = 'cadaster'/>
-        <button
+      <S.CadasterSubContainer>
+        <div>
+          <h1>Create Account</h1>
+        </div>
+        <div>
+          <Form cadaster='cadaster' />
+          <button
             type="submit"
-            onClick={ () => navigate('/login') }
-        >
-          Back Login
-        </button>
-      </div>
-      </S.CadasterContainer>
+            onClick={() => navigate('/login')}
+          >
+            Back Login
+          </button>
+        </div>
+      </S.CadasterSubContainer>
+    </S.CadasterContainer>
   )
 }
 
