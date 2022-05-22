@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import ButtonApi from "../buttonapi";
 import CadasterContext from "../../../context/CadasterContext";
 import { useNavigate } from 'react-router-dom';
@@ -12,17 +12,18 @@ function Form({ cadaster }){
     passwordConfirm,
     setPasswordConfirm,
     setBtnDisabled,
+    setBtnDisabledCadaster,
   } = useContext(CadasterContext);
 
   const navigate = useNavigate();
 
-  const clickBackButton  = () => {
-    navigate('/login');
+  useEffect(() => {
     setNameLogin('');
     setPasswordLogin('');
     setBtnDisabled(true);
     setPasswordConfirm('');
-  }
+    setBtnDisabledCadaster(true);
+  },[])
 
   return(
     <form>
@@ -30,7 +31,7 @@ function Form({ cadaster }){
         Name
         <input
           name="name-login"
-          type="email"
+          type="text"
           onChange={ (ele) => setNameLogin(
             ele.target.value,
           ) }
@@ -71,7 +72,7 @@ function Form({ cadaster }){
           ?(
           <button
             type="submit"
-            onClick={ clickBackButton }
+            onClick={ () => navigate('/login') }
           >Back Login</button>)
           : ''
         }
