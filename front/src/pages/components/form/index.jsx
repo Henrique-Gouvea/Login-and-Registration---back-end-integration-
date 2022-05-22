@@ -40,7 +40,7 @@ function Form({ cadaster }) {
           {cadaster
             ? (
               <p
-              className={ nameLogin.length > 2 ? 'verifyOk' : '' }
+              className={ nameLogin.length > 2 ? 'verifyOk' : 'verifyFalse' }
               >
                 {nameLogin.length > 2
                   ? 'Accept'
@@ -58,7 +58,7 @@ function Form({ cadaster }) {
           {cadaster
             ? (
               <p
-                className= { passwordLogin.length > 5 ? 'verifyOk' : '' }
+                className= { passwordLogin.length > 5 ? 'verifyOk' : 'verifyFalse' }
               >
                 { passwordLogin.length > 5
                   ? 'Accept'
@@ -79,7 +79,7 @@ function Form({ cadaster }) {
                   value={passwordConfirm}
                 />
                 <p
-                  className= { passwordConfirm && (passwordConfirm === passwordLogin) ? 'verifyOk' : '' }
+                  className= { passwordConfirm && (passwordConfirm === passwordLogin) ? 'verifyOk' : 'verifyFalse' }
                 >
                   {passwordConfirm && (passwordConfirm === passwordLogin)
                     ? 'Accept'

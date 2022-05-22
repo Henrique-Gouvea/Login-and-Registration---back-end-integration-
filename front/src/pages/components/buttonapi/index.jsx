@@ -29,7 +29,6 @@ function ButtonApi({ cadaster }) {
   const clickSubmitLogin = (event) => {
     event.preventDefault();
     if (!validate()) return;
-    console.log('teste');
     apiRequest({ name: nameLogin, password: passwordLogin }, cadaster)
       .then((e) => {
         if (e.ok) {
@@ -40,7 +39,8 @@ function ButtonApi({ cadaster }) {
         } else alert(e.why);
       })
       .catch(function (err) {
-        console.log(err);
+        console.log(err)
+        alert('Sorry, server error')
       });
   }
 
