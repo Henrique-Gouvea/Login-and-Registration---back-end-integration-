@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import ButtonApi from "../buttonapi";
 import CadasterContext from "../../../context/CadasterContext";
-import { useNavigate } from 'react-router-dom';
 
 function Form({ cadaster }){
   const {
@@ -14,8 +13,6 @@ function Form({ cadaster }){
     setBtnDisabled,
     setBtnDisabledCadaster,
   } = useContext(CadasterContext);
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     setNameLogin('');
@@ -66,17 +63,7 @@ function Form({ cadaster }){
         </>
         )
         :  ''}
-      <>  
-        <ButtonApi cadaster= { cadaster }/>
-        {cadaster
-          ?(
-          <button
-            type="submit"
-            onClick={ () => navigate('/login') }
-          >Back Login</button>)
-          : ''
-        }
-      </>
+       <ButtonApi cadaster= { cadaster }/>
     </form>
   )
 }

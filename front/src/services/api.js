@@ -11,7 +11,7 @@ const request = async (resource,  method , body) => {
     } catch (err) { return (err.response.data); }
 };
 
-export const apiRequest = async (user) => {
-
-    return await request('/user/cadaster', 'post', user);
-  };
+export const apiRequest = async (user, cadaster) => {
+    return await request(
+        (cadaster ? '/user/cadaster' : '/login'), 'post', user);
+};

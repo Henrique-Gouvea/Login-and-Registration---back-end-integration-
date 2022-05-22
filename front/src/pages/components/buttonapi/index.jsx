@@ -18,20 +18,20 @@ function ButtonApi({ cadaster }){
 
   const clickSubmitLogin = (event) =>{
     event.preventDefault();
-    console.log(nameLogin);
-    console.log(passwordLogin);
-    apiRequest({ name: nameLogin, password: passwordLogin })
-    .then((e) => e.ok
-    ? (
-        alert (`${e.user.name}, sucess `),
-        navigate('/login')
-      )
-    : alert(e.why))
+    apiRequest({ name: nameLogin, password: passwordLogin }, cadaster)
+    .then((e) => {
+      if (e.ok) {
+        if (cadaster) {
+          alert (`${e.user.name}, sucess `)
+          navigate('/login')
+        } else navigate('/home');
+      } else alert(e.why);
+    })
     .catch(function (err) {
       console.log(err);
     });
   }
-  
+
   return(
     <>
       <button
