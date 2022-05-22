@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import CadasterContext from '../../../context/CadasterContext'
 import { apiRequest } from '../../../services/api';
 import { useNavigate } from 'react-router-dom';
-import * as yup from "yup";
 import userSchema from "../../../validations/UserValidation";
 
 function ButtonApi({ cadaster }){
@@ -23,14 +22,14 @@ function ButtonApi({ cadaster }){
       password: passwordLogin,
       confirmPassword: passwordConfirm,
     }
-    console.log(`${nameLogin} ${passwordLogin} ${passwordConfirm}`);
     const isValid = await userSchema.isValid(formData);
-    console.log(isValid);
+    return isValid
   }
 
   const clickSubmitLogin = (event) =>{
     event.preventDefault();
     if(!validate())return;
+    console.log('teste');
     apiRequest({ name: nameLogin, password: passwordLogin }, cadaster)
     .then((e) => {
       if (e.ok) {
