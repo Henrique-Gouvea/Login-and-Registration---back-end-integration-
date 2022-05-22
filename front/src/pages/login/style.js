@@ -7,6 +7,7 @@ export const LoginContainer = styled.div`
   height: 100vh;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 `;
 
 export const LoginSubContainer = styled.div`
