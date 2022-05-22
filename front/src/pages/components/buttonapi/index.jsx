@@ -30,7 +30,7 @@ function ButtonApi({ cadaster }){
 
   const clickSubmitLogin = (event) =>{
     event.preventDefault();
-    validate();
+    if(!validate())return;
     apiRequest({ name: nameLogin, password: passwordLogin }, cadaster)
     .then((e) => {
       if (e.ok) {
