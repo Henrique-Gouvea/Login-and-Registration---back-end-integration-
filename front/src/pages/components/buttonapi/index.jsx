@@ -4,7 +4,7 @@ import { apiRequest } from '../../../services/api';
 import { useNavigate } from 'react-router-dom';
 import userSchema from "../../../validations/UserValidation";
 
-function ButtonApi({ cadaster }){
+function ButtonApi({ cadaster }) {
 
   const {
     btnDisabled,
@@ -26,34 +26,32 @@ function ButtonApi({ cadaster }){
     return isValid
   }
 
-  const clickSubmitLogin = (event) =>{
+  const clickSubmitLogin = (event) => {
     event.preventDefault();
-    if(!validate())return;
+    if (!validate()) return;
     console.log('teste');
     apiRequest({ name: nameLogin, password: passwordLogin }, cadaster)
-    .then((e) => {
-      if (e.ok) {
-        if (cadaster) {
-          alert (`${e.user.name}, sucess `)
-          navigate('/login')
-        } else navigate('/home');
-      } else alert(e.why);
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
+      .then((e) => {
+        if (e.ok) {
+          if (cadaster) {
+            alert(`${e.user.name}, sucess `)
+            navigate('/login')
+          } else navigate('/home');
+        } else alert(e.why);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
   }
 
-  return(
-    <>
-      <button
-        type='submit'
-        onClick={ clickSubmitLogin }
-        disabled = { cadaster ? btnDisabledCadaster : btnDisabled }
-      >
-      { cadaster ? 'Submit' : 'Login'}
-      </button>
-    </>
+  return (
+    <button
+      type='submit'
+      onClick={clickSubmitLogin}
+      disabled={cadaster ? btnDisabledCadaster : btnDisabled}
+    >
+      {cadaster ? 'Submit' : 'Login'}
+    </button>
   )
 }
 
