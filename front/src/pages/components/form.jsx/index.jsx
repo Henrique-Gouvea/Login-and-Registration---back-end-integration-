@@ -27,6 +27,7 @@ function Form({ cadaster }){
     <form>
       <label htmlFor="name-login">
         Name
+        {' '}
         <input
           name="name-login"
           type="text"
@@ -36,8 +37,16 @@ function Form({ cadaster }){
           value={ nameLogin }
         />
       </label>
+      {cadaster
+        ? (
+        <p>
+          { nameLogin.length > 2
+        ? 'Accept'
+        : 'Name length min 2' }
+        </p>) : ''}
       <label htmlFor="password-login">
         Password
+        {' '}
         <input
           type="password"
           name="password-login"
@@ -49,9 +58,18 @@ function Form({ cadaster }){
       </label>
       {cadaster
         ? (
+        <p>
+          { passwordLogin.length > 5
+          ? 'Accept'
+          : 'Password length min 6' }
+        </p>) : ''}
+      
+      {cadaster
+        ? (
         <>
           <label htmlFor="password-confirm">
           Confirm Password
+          {' '}
           <input
             type="password"
             name="password-confirm"
@@ -61,6 +79,11 @@ function Form({ cadaster }){
             value={ passwordConfirm }
           />
           </label>
+          <p>
+            { passwordConfirm &&(passwordConfirm === passwordLogin)
+            ? 'Accept'
+            : 'Confirm equal password' }
+          </p>
         </>
         )
         :  ''}

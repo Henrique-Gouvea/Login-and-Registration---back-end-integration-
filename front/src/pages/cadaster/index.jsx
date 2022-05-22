@@ -19,8 +19,6 @@ function Cadaster() {
         >
           Back Login
         </button>
-        <p>*Name length min 2</p>
-        <p>*Password length min 6</p>
       </div>
     </>
   )
