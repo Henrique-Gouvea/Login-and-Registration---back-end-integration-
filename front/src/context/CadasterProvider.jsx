@@ -39,7 +39,6 @@ function CadasterProvider({ children }) {
     <CadasterContext.Provider value={ stateValue }>
       {children}
     </CadasterContext.Provider>
-
   );
 }
 
