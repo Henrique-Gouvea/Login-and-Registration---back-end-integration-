@@ -1,6 +1,3 @@
-# Login and Registration screens
-
-
 <h1 align="center">
    Tela de Login e Registro
 </h1>
