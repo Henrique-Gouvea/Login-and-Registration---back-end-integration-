@@ -23,10 +23,9 @@ Desenvolvi esse projeto com intuito de fazer o cadastro de um usuario e login, i
 
 ## 🚀 Como executar o projeto
 
-Este projeto é divido em duas partes:
-2. Frontend (pasta front)
+1. Frontend (pasta front)
 
-💡Tanto o Frontend quanto o Mobile precisam que o Backend esteja sendo executado para funcionar.
+💡O Frontend precisa que o Backend esteja sendo executado para funcionar, ainda não implementei o back , apenas usei de terceiro , assim que fizer atualizo.
 
 ### Pré-requisitos
 
