@@ -27,8 +27,7 @@ Desenvolvi esse projeto com intuito de fazer o cadastro de um usuario e login, i
 ## 🚀 Como executar o projeto
 
 Este projeto é divido em duas partes:
-1. Backend (pasta server) 
-2. Frontend (pasta web)
+2. Frontend (pasta front)
 
 💡Tanto o Frontend quanto o Mobile precisam que o Backend esteja sendo executado para funcionar.
 
@@ -37,28 +36,6 @@ Este projeto é divido em duas partes:
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
-
-#### 🎲 Rodando o Backend (servidor)
-
-```bash
-
-# Clone este repositório
-$ git clone git@github.com:Henrique-Gouvea/Login-and-Registration---back-end-integration-.git
-
-# Acesse a pasta do projeto no terminal/cmd
-$ cd Login-and-Registration---back-end-integration-
-
-# Vá para a pasta server
-$ cd server
-
-# Instale as dependências
-$ npm install
-
-# Execute a aplicação em modo de desenvolvimento
-$ npm run dev
-
-# O servidor inciará na porta: - acesse http://localhost: 
-
 
 
 #### 🧭 Rodando a aplicação web (Frontend)
@@ -72,7 +49,7 @@ $ git clone git@github.com:Henrique-Gouvea/Login-and-Registration---back-end-int
 $ cd Login-and-Registration---back-end-integration-
 
 # Vá para a pasta da aplicação Front End
-$ cd web
+$ cd front
 
 # Instale as dependências
 $ npm install
