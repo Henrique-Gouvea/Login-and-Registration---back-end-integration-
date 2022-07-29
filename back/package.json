@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build && node ./dist/index.js",
-    "dev": "tsnd index.ts",
+    "dev": "tsnd src/server.ts",
     "build": "tsc"
   },
   "keywords": [],
