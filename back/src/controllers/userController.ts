@@ -1,6 +1,7 @@
 import  { Request, Response, NextFunction } from 'express'
 import { IUser } from '../interfaces/IUser';
-import { userService } from '../services/userService';
+import userService from '../services/userService';
+import httpStatus from '../helpers/httpStatus'
 
 async function create(req: Request, res: Response, next: NextFunction){
   try {
