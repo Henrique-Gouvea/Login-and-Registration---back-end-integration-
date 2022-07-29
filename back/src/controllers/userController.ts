@@ -1,5 +1,17 @@
-import  { Request, Response } from 'express'
+import  { Request, Response, NextFunction } from 'express'
+import { IUser } from '../interfaces/IUser';
+import { userService } from '../services/userService';
 
-export async function addUser(req: Request, res: Response){
-  
+async function create(req: Request, res: Response, next: NextFunction){
+  try {
+    const user: IUser = req.body;
+    const responseUser = await userService.create(user);
+    res.status(httpStatus.CREATED).json(responseUser);
+  } catch (error) {
+    next(error);
+  }
+}
+
+export default {
+  create,
 }

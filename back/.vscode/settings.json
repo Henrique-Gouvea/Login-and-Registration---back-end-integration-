@@ -1,5 +1,7 @@
 {
   "conventionalCommits.scopes": [
-    "Routes"
+    "Routes",
+    "interfaces",
+    "Controllers"
   ]
 }
