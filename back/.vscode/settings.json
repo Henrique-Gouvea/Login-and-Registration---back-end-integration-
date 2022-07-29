@@ -3,6 +3,7 @@
     "Routes",
     "interfaces",
     "Controllers",
-    "helpers"
+    "helpers",
+    "Validation"
   ]
 }
